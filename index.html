@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodact</title>
+    <script src="c:\Users\ce pc\Desktop\jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function() {
+    // تمرير إلى قسم المنتجات عند الضغط على "تسوق الآن"
+    $('#shop-now').click(function() {
+        $('html, body').animate({
+            scrollTop: $('#products').offset().top
+        }, 1000);
+    });
+
+    // إضافة تأثير عند الضغط على زر "أضف إلى السلة"
+    $('.product-card button').click(function() {
+        alert('تمت إضافة المنتج إلى السلة!');
+    });
+
+    $(document).ready(function() {
+    // تمرير إلى قسم المنتجات عند الضغط على "تسوق الآن"
+    $('#shop-now').click(function() {
+        $('html, body').animate({
+            scrollTop: $('#products').offset().top
+        }, 1000);
+    });
+
+    // إضافة تأثير عند الضغط على زر "أضف إلى السلة"
+    $('.product-card button').click(function() {
+        alert('تمت إضافة المنتج إلى السلة!');
+    });
+
+    // إرسال نموذج الشراء
+    $('#checkout-form').submit(function(event) {
+        event.preventDefault(); // منع الإرسال الفعلي للنموذج
+        const name = $('#name').val();
+        const address = $('#address').val();
+        const phone = $('#phone').val();
+
+        if (name && address && phone) {
+            $('#checkout-form').hide();
+            $('#order-confirmation').show();
+        } else {
+            alert('يرجى ملء جميع الحقول!');
+        }
+    });
+});
+});
+    </script>
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+
+    form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+#order-confirmation {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #28a745;
+}  
+}
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر الألبسة والأحذية</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>متجر الألبسة والأحذية</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <h2>اكتشف أحدث صيحات الموضة!</h2>
+            <p>أفضل الألبسة والأحذية بأسعار رائعة.</p>
+            <button id="shop-now">تسوق الآن</button>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2  align="center">منتجاتنا</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="img/th.jpeg" alt="حذاء أنيق">
+                <h3>حذاء رياضي</h3>
+                <p>السعر: 300 درهم</p>
+                <button>أضف إلى السلة</button>
+            </div>
+            <div class="product-card">
+                <img src="img/th (1).jpeg" alt="فستان أنيق">
+                <h3>فستان نسائي</h3>
+                <p>السعر: 450 درهم</p>
+                <button>أضف إلى السلة</button>
+            </div>
+            <div class="product-card">
+                <img src="img/th (2).jpeg" alt="قميص">
+                <h3>قميص رجالي</h3>
+                <p>السعر: 200 درهم</p>
+                <button>أضف إلى السلة</button>
+            </div>
+        </div>
+    </section>
+    <br>
+    <hr>
+    <br>
+
+    <section id="checkout">
+        <h2 align="center">إتمام الشراء</h2>
+        <form id="checkout-form" width="50%">
+
+            <table align="center" >
+
+
+            <tr><td  > <input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required></td></tr>
+         
+             <tr><td  > <input type="text" id="address" name="address" placeholder="أدخل عنوانك" required></td></tr>
+           
+            <tr><td  ><input type="tel" id="phone" name="phone" placeholder="أدخل رقم هاتفك" required></td></tr>
+    
+            <tr><td align="center" ><button type="submit">إتمام الطلب</button><br></td></tr>
+    
+          
+        </table>
+        </form>
+        <div id="order-confirmation" style="display: none;">
+            <p  align="center">شكرًا لك على الشراء!</p>
+            <p  align="center">سيتم الاتصال بك قريبًا لتأكيد الطلب.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 متجر الألبسة والأحذية. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+    
+</body>
+</html>
